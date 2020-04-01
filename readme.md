@@ -1,7 +1,12 @@
 简易计算公式
 ==============
 
+主要功能
 
+- 运算符 `+ - * / ^ %` 
+- 逻辑符 `= > >= < <= <> & |`
+- 字符串拼接    `'1'+'1'` = `11`
+- 可扩充常量、变量和函数
 
 
 ## 测试
@@ -16,8 +21,11 @@ function Calc(const AExp: string): Variant;
 var cParser: TFormula;
 begin
   cParser := TFormula.Create(nil);
-  Result := cParser.Calc(AExp);
-  cParser.free;
+  try
+    Result := cParser.Calc(AExp);
+  finally
+    cParser.free;
+  end;
 end;
 
   Check(Calc(' 1') = 1, '基础公式错误');
