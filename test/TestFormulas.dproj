@@ -20,12 +20,13 @@
 			<Base>true</Base>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_ExeOutput>..\bin</DCC_ExeOutput>
 			<DCC_Optimize>false</DCC_Optimize>
 			<DCC_Define>_CONSOLE_TESTRUNNER;$(DCC_Define)</DCC_Define>
 			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;$(DCC_UnitAlias)</DCC_UnitAlias>
 			<DCC_UnitSearchPath>$(BDS)\Source\DUnit\src;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
-			<DCC_DcuOutput>.</DCC_DcuOutput>
-			<DCC_DependencyCheckOutputName>TestFormulas.exe</DCC_DependencyCheckOutputName>
+			<DCC_DcuOutput>..\dcu</DCC_DcuOutput>
+			<DCC_DependencyCheckOutputName>..\bin\TestFormulas.exe</DCC_DependencyCheckOutputName>
 			<DCC_ImageBase>00400000</DCC_ImageBase>
 			<DCC_Platform>x86</DCC_Platform>
 		</PropertyGroup>
@@ -42,8 +43,9 @@
 			<DelphiCompile Include="TestFormulas.dpr">
 				<MainSource>MainSource</MainSource>
 			</DelphiCompile>
-			<DCCReference Include="uFormulas.pas"/>
 			<DCCReference Include="TestuExpParser.pas"/>
+			<DCCReference Include="..\scr\uFormulas.pas"/>
+			<DCCReference Include="..\scr\untCommFuns.pas"/>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>

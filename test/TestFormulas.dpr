@@ -19,8 +19,9 @@ uses
   TestFramework,
   GUITestRunner,
   TextTestRunner,
-  uFormulas in 'uFormulas.pas',
-  TestuExpParser in 'TestuExpParser.pas';
+  TestuExpParser in 'TestuExpParser.pas',
+  uFormulas in '..\scr\uFormulas.pas',
+  untCommFuns in '..\scr\untCommFuns.pas';
 
 {$R *.RES}
 
